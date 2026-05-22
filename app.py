@@ -40,16 +40,16 @@ def predict():
         # Predict
         prediction = model.predict(input_scaled)[0]
         prediction = round(prediction, 2)
-        if prediction <= 2:
+        if prediction <= 5:
             risk_class = "low"
             risk_label = "Low"
             advisory = "Fire risk is low. Normal activities can continue safely."
             
-        elif prediction <= 5:
+        elif prediction <= 10:
             risk_class = "moderate"
             risk_label = "Moderate"
             advisory = "Moderate fire risk. Be cautious with fire-related activities."
-        elif prediction <= 7:
+        elif prediction <= 20:
             risk_class = "high"
             risk_label = "High"
             advisory = "High fire risk. Avoid open flames and monitor conditions closely."
